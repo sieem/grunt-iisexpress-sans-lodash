@@ -1,8 +1,8 @@
 {
-  "name": "grunt-iisexpress",
+  "name": "grunt-iisexpress-sans-lodash",
   "description": "Start an IIS Express process",
   "version": "0.4.0",
-  "homepage": "https://github.com/rpeterclark/grunt-iisexpress",
+  "homepage": "https://github.com/sieem/grunt-iisexpress-sans-lodash",
   "author": {
     "name": "R. Peter Clark",
     "email": "rpeterclark@gmail.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rpeterclark/grunt-iisexpress.git"
+    "url": "git://github.com/sieem/grunt-iisexpress-sans-lodash.git"
   },
   "bugs": {
-    "url": "https://github.com/rpeterclark/grunt-iisexpress/issues"
+    "url": "https://github.com/sieem/grunt-iisexpress-sans-lodash/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/rpeterclark/grunt-iisexpress/blob/master/LICENSE-MIT"
+      "url": "https://github.com/sieem/grunt-iisexpress-sans-lodash/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {

@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 	'use strict';
 
 	grunt.registerMultiTask('iisexpress', 'Start an IIS Express process.', function() {
-		var _ = grunt.util._;
 		var options = this.options({
 			cmd: 'c:/program files/iis express/iisexpress.exe',
 			keepalive: false,
@@ -25,12 +24,14 @@ module.exports = function(grunt) {
 		}
 
 		// Convert options to command line parameter format
-		var args = _.map(_.pairs(_.omit(options, ['cmd', 'keepalive', 'killOn', 'killOnExit', 'open', 'openPath', 'openUrl', 'verbose'])), function(option) {
-			if (option[0] == 'path') {
-				option[1] = require('path').resolve(option[1]);
-			}
-			return '-' + option[0] + ':' + option[1];
-		});
+		var args = Object.entries(options)
+			.filter((option) => !['cmd', 'keepalive', 'killOn', 'killOnExit', 'open', 'openPath', 'openUrl', 'verbose'].includes(option[0]))
+			.map((option) => {
+				if (option[0] == 'path') {
+					option[1] = require('path').resolve(option[1]);
+				}
+				return '-' + option[0] + ':' + option[1];
+			});
 
 		var spawnOptions = {
 			detached: true
